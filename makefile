@@ -1,8 +1,9 @@
 all: compile suid aslr
 compile:
-	gcc -fno-stack-protector -z execstack bufferOverflow.c -o bufferOverflow  -std=c99
+	gcc -fno-stack-protector -z execstack bufferOverflow.c -o bufferOverflow  -std=c99 -m32
 suid:
-	sudo chmod 4755 bufferOverflow
+	sudo chown root:root bufferOverflow
+	sudo chmod 4777 bufferOverflow
 
 aslr:
 	sudo sysctl -w kernel.randomize_va_space=0
