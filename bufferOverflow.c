@@ -17,6 +17,6 @@ void countLines(FILE* f){
 
 int main(int argc,char** argv){
   if(argc<2)
-    printf("Proper usage is %s <filename>",argv[0]);
+    printf("Proper usage is %s <filename>\n",argv[0]);
   FILE* myfile=fopen(argv[1],"r"); 
 }
